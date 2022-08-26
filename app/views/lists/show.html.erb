@@ -3,6 +3,9 @@
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <li><%= bookmark.movie.title %></li>
+    <p><%= bookmark.movie.overview %></p>
+    <p>Rating: <%= bookmark.movie.rating %></p>
+    <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bookmark), data: {turbo_method: :delete} %>
     <% end %>
 </ul>
 
